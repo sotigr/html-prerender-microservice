@@ -20,7 +20,7 @@ fullpath = os.path.dirname(os.path.abspath(__file__))
  
 driver = webdriver.Chrome(fullpath + "/chromedriver", chrome_options=chrome_options)
 
-app = Flask(__name__)
+application = Flask(__name__)
 cache_file = "cache.json" 
 
 
@@ -103,7 +103,7 @@ def HandleLocation(location, timeout):
 
     return html
 
-@app.route("/render",  methods=['GET'])
+@application.route("/render",  methods=['GET'])
 def render():
     try:
         location_path = request.args.get('page')
@@ -119,4 +119,4 @@ def render():
   
 if __name__ == "__main__":
     
-    app.run(host="127.0.0.1", port=5123, debug=False)
+    application.run(host="127.0.0.1", port=5123, debug=False)
