@@ -15,9 +15,8 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument("--window-size=1920,1080")
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
-
-pathname = os.path.dirname(sys.argv[0])
-fullpath = os.path.abspath(pathname)
+ 
+fullpath = os.path.dirname(os.path.abspath(__file__)) 
  
 driver = webdriver.Chrome(fullpath + "/chromedriver", chrome_options=chrome_options)
 
