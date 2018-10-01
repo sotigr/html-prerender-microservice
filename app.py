@@ -18,9 +18,7 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 
 pathname = os.path.dirname(sys.argv[0])
 fullpath = os.path.abspath(pathname)
-
-
-print("!!!!!!!!!--", fullpath + "/chromedriver")
+ 
 driver = webdriver.Chrome(fullpath + "/chromedriver", chrome_options=chrome_options)
 
 app = Flask(__name__)
@@ -122,4 +120,4 @@ def render():
   
 if __name__ == "__main__":
     
-    app.run()
+    app.run(host="127.0.0.1", port=5123, debug=False)
