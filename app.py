@@ -19,6 +19,8 @@ chrome_options.add_argument('--disable-dev-shm-usage')
 pathname = os.path.dirname(sys.argv[0])
 fullpath = os.path.abspath(pathname)
 
+
+print("!!!!!!!!!--", fullpath + "/chromedriver")
 driver = webdriver.Chrome(fullpath + "/chromedriver", chrome_options=chrome_options)
 
 app = Flask(__name__)
